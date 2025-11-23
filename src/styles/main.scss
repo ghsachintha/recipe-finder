@@ -1,0 +1,136 @@
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* CSS Variables for Light/Dark Mode */
+:root {
+  /* Light Mode (Default) */
+  --bg-color: #ffffff;
+  --text-color: #191b1d;
+  --card-bg: #ffffff;
+  --sub-text: #707981;
+  --border-color: #e0e0e0;
+  --primary-color: #e21f8b;
+  /* The Pink */
+  --secondary-bg: #f9fafb;
+}
+
+body.dark {
+  /* Dark Mode Overrides */
+  --bg-color: #191b1d;
+  --text-color: #eaedef;
+  --card-bg: #2a2d31;
+  --sub-text: #949da5;
+  --border-color: #3a3d41;
+  --secondary-bg: #0f1113;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Reusable Container */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 16px; /* Mobile Padding */
+
+  @media (min-width: 768px) {
+    padding: 0 50px; /* Desktop Padding - Syncs with Header */
+  }
+}
+/* Button Styles */
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+/* --- HomePage specific styles --- */
+
+.main-content {
+  min-height: 80vh;
+  padding-bottom: 40px;
+}
+
+/* Category Horizontal Scroll */
+.category-scroll {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 20px 0;
+  margin-bottom: 20px;
+  scrollbar-width: none;
+  /* Hide scrollbar Firefox */
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar Chrome */
+
+  .category-chip {
+    background: var(--bg-color);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: all 0.2s;
+
+    &:hover {
+      background: var(--primary-color);
+      color: white;
+    }
+  }
+}
+
+/* Grid Layout */
+.section-title {
+  font-family: 'Lora', serif;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+.recipe-grid {
+  display: grid;
+  /* Auto-fit columns: This makes it responsive automatically! */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+
+  .section-title {
+    margin: 0;
+    /* The font is set in the h2 global style, but ensures alignment */
+  }
+
+  .show-more {
+    background: none;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-color);
+    cursor: pointer;
+
+    &:hover {
+      color: var(--primary-color);
+      text-decoration: underline;
+    }
+  }
+}

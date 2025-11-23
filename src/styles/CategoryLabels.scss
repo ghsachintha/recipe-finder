@@ -1,0 +1,63 @@
+.label-section {
+    /* Added margin-top to push it away from the black nav bar */
+    margin-top: 30px;
+    padding: 0 20px;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .label-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 40px;
+        margin-bottom: 20px;
+
+        h3 {
+            margin: 0;
+            font-family: 'Lora', serif;
+            font-size: 20px;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        .show-all-btn {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: underline;
+
+            &:hover {
+                color: var(--primary-color);
+            }
+        }
+    }
+
+    .label-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+
+        .label-pill {
+            background: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            /* Pink Text */
+            padding: 8px 20px;
+            border-radius: 30px;
+            /* Pill shape */
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+
+            &:hover {
+                background: var(--primary-color);
+                color: white;
+            }
+        }
+    }
+}

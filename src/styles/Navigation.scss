@@ -1,0 +1,120 @@
+.sub-nav {
+  background-color: #191b1d;
+  padding: 16px 0;
+  width: 100%;
+  position: sticky; /* Keep it sticky if you want */
+  top: 60px; /* Below header height */
+  z-index: 90;
+
+  body.dark & {
+    background-color: #000000;
+    border-bottom: 1px solid #333;
+  }
+
+  .nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    /* FIX: Match Header padding */
+    padding: 0 16px; 
+    
+    max-width: 1440px;
+    margin: 0 auto;
+
+    /* DESKTOP PADDING ADJUSTMENT */
+    @media (min-width: 768px) {
+        padding: 0 50px; 
+    }
+  }
+
+  /* Desktop Links */
+  .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 30px;
+
+    .nav-item {
+      text-decoration: none;
+      color: #949da5;
+      font-size: 16px;
+      font-weight: 500;
+      transition: color 0.2s;
+      &:hover, &.active { color: white; }
+    }
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    a {
+      text-decoration: none;
+      padding: 10px 24px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .btn-white {
+      background: white;
+      color: #191b1d;
+      white-space: nowrap;
+    }
+
+    /* Responsive Favorites Button */
+    .btn-pink {
+      background: #e21f8b;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .icon { display: none; } /* Hide icon on desktop */
+      .text { display: block; } /* Show text on desktop */
+    }
+  }
+
+  /* --- MOBILE STYLES --- */
+  @media (max-width: 768px) {
+    /* 1. Hide Text Links */
+    .desktop-only-flex {
+        display: none !important;
+    }
+
+    /* 2. Center the buttons or spread them? 
+          Your figma shows them spread (Surprise Left, Heart Right) */
+    .nav-content {
+        justify-content: space-between; 
+        width: 100%;
+    }
+    
+    .nav-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    /* 3. Transform Favorites Button into Circle */
+    .btn-pink.favorites-btn-responsive {
+        padding: 0;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%; /* Circle */
+        background: white; /* White bg per figma */
+        
+        .text { display: none; } /* Hide text */
+        .icon { 
+            display: flex; 
+            svg { 
+                fill: #e21f8b; /* Pink Heart */
+                color: #e21f8b;
+                width: 20px; 
+                height: 20px;
+            }
+        }
+    }
+  }
+}
