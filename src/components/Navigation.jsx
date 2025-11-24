@@ -19,13 +19,13 @@ export default function Navigation() {
         {/* Action Buttons (Visible always, styles change on mobile) */}
         <div className="nav-actions">
           
-          <Link to="/surprise" className="btn-white">
+          <Link to="/surprise" className="btn-secondary">
             Surprise Me!
           </Link>
 
           {/* Logic: On Desktop -> 'Favorites' Text Button
                      On Mobile  -> Heart Icon Circle Button */}
-          <Link to="/favorites" className="btn-pink favorites-btn-responsive">
+          <Link to="/favorites" className="btn-primary favorites-btn-responsive">
              <span className="text">Favorites</span>
              <span className="icon"><Heart size={20} fill="white" /></span>
           </Link>

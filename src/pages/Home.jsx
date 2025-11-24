@@ -5,6 +5,11 @@ import ChefCard from "../components/ChefCard"; // Import the new component
 import { recipeAPI } from "../utils/api";
 import "../styles/main.scss";
 
+import gordonImg from "../assets/chefs/GordonRamsay.jpg";
+import jamieImg from "../assets/chefs/JamieOliver.jpg";    
+import nigellaImg from "../assets/chefs/NigellaLawson.jpg"; 
+import wolfgangImg from "../assets/chefs/WolfgangPuck.jpg";
+
 export default function Home({ searchTerm }) {
   const [popularRecipes, setPopularRecipes] = useState([]);
   const [quickRecipes, setQuickRecipes] = useState([]); // State for bottom section
@@ -16,29 +21,25 @@ export default function Home({ searchTerm }) {
       name: "Gordon Ramsay",
       occupation: "Head Chef",
       description: "Known for his fiery temper and exceptional cooking.",
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/6/6f/Gordon_Ramsay.jpg",
+      image: gordonImg,
     },
     {
       name: "Jamie Oliver",
       occupation: "Restaurateur",
       description: "Advocate for healthy eating and simple recipes.",
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/6/6f/Gordon_Ramsay.jpg",
+      image: jamieImg,
     },
     {
       name: "Nigella Lawson",
       occupation: "Food Writer",
       description: "Famous for her indulgent and comforting cooking style.",
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/6/6f/Gordon_Ramsay.jpg",
+      image: nigellaImg,
     },
     {
       name: "Wolfgang Puck",
       occupation: "Restaurateur",
       description: "A pioneer of modern fusion cuisine.",
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/6/6f/Gordon_Ramsay.jpg",
+      image: wolfgangImg,
     },
   ];
 
